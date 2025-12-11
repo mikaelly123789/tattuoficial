@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Tattu - Solicitar Orçamento</title>
+    <link rel="stylesheet" href="style.css">  
+<link rel="stylesheet" href="formulario.css">
+</head>
+
+<body>
+
+    <!-- Banner -->
+    <header class="banner">
+        <div class="logo-container">
+            <img src="imagens/logo.jpeg" alt="Studio Tattu" class="logo-imagem">
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="orcamento.html" class="active">Orçamento</a></li>
+            <li><a href="duvidas.html">Dúvidas</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main class="container">
+
+        <section class="intro">
+            <h1>Solicitar Orçamento</h1>
+            <p>Preencha o formulário abaixo com as informações da tatuagem que deseja fazer. Quanto mais detalhes você enviar, mais preciso será o valor aproximado, se ainda desejar fazer a tatuagem após saber o valor clique em Contato para agendar uma sessão conosco.</p>
+        </section>
+
+        <section class="form-section">
+
+            <form class="orcamento-form" action="#" method="post">
+
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+
+                <label for="telefone">Telefone / WhatsApp</label>
+                <input type="text" id="telefone" name="telefone" required placeholder="(DDD) 90000-0000">
+
+                <label for="tamanho">Tamanho Aproximado</label>
+                <select id="tamanho" name="tamanho" required>
+                    <option value="">Selecione...</option>
+                    <option>Pequena (5–10 cm)</option>
+                    <option>Média (10–20 cm)</option>
+                    <option>Grande (20–40 cm)</option>
+                    <option>Muito grande (corpo inteiro)</option>
+                </select>
+
+                <label for="estilo">Estilo da Tatuagem</label>
+                <select id="estilo" name="estilo" required>
+                    <option value="">Escolha...</option>
+                    <option>Realismo</option>
+                    <option>Geométrica</option>
+                    <option>Aquarela</option>
+                    <option>Minimalista</option>
+                    <option>Old School</option>
+                    <option>Linework</option>
+                </select>
+
+                <label for="local">Local do Corpo</label>
+                <input type="text" id="local" name="local" placeholder="Ex: antebraço, costa, panturrilha…">
+
+                <label for="descricao">Descrição da Ideia</label>
+                <textarea id="descricao" name="descricao" rows="5" required placeholder="Descreva sua tatuagem"></textarea>
+
+                <label for="referencia">Imagens de Referência (opcional)</label>
+                <input type="file" id="referencia" name="referencia" accept="image/*">
+
+                <button type="submit" class="btn-primary">Enviar Pedido de Orçamento</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Studio Tattu</h3>
+                <p>Transformando ideias em arte na pele desde 2010.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p>Email: contato@studiotattu.com</p>
+                <p>Telefone: (11) 9999-9999</p>
+            </div>
+            <div class="footer-section">
+                <h3>Horário</h3>
+                <p>Seg - Sex: 10h às 19h</p>
+                <p>Sábado: 10h às 16h</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Studio Tattu. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

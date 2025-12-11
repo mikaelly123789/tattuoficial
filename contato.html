@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Tattu</title>
+    <link rel="stylesheet" href="contato.css">
+</head>
+<body>
+    <section class="contact-section">
+        <h1>Entre em Contato</h1>
+        <p>Tem alguma dúvida além das já explicadas na aba "Dúvidas" ou tem alguma sugestão? Entre em contato conosco!</p>
+        
+        <div class="contact-grid">
+            <!-- Informações de Contato -->
+            <div class="contact-info">
+                <h2>Informações de Contato</h2>
+                
+                <div class="contact-item">
+                    <h3>Endereço</h3>
+                    <p>Rua Exemplo, 123<br>Centro, Cidade - Estado<br>CEP: 00000-000</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>Telefone</h3>
+                    <p>(11) 9999-9999</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>E-mail</h3>
+                    <p>contato@tattu.com.br</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>Horário de Funcionamento</h3>
+                    <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                </div>
+                
+                <div class="social-media">
+                    <h3>Siga-nos</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">Instagram</a>
+                        <a href="#" class="social-icon">Facebook</a>
+                        <a href="#" class="social-icon">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Formulário de Contato -->
+            <div class="contact-form">
+                <h2>Envie sua Mensagem</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Telefone:</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Assunto:</label>
+                        <select id="subject" name="subject" required>
+                            <option value="orcamento">Orçamento</option>
+                            <option value="duvidas">Dúvidas</option>
+                            <option value="agendamento">Agendamento</option>
+                            <option value="sugestoes">Sugestões</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Campos de Agendamento (ocultos inicialmente) -->
+                    <div id="scheduling-fields" class="form-group scheduling-fields">
+                        <div class="scheduling-group">
+                            <label for="appointment-date">Data da Sessão Que Deseja Agendar:</label>
+                            <input type="date" id="appointment-date" name="appointment-date">
+                        </div>
+                        
+                        <div class="scheduling-group">
+                            <label for="appointment-time">Horário Da Sessão Desejado:</label>
+                            <input type="time" id="appointment-time" name="appointment-time">
+                        </div>
+                        
+                        <p class="scheduling-note">⚠️ Horário comercial: Segunda a Sexta, das 8h às 18h</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Arquivo JavaScript -->
+    <script>
+    // JavaScript inline - 100% garantido que vai funcionar
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Página carregada, JavaScript funcionando!');
+        
+        const subjectSelect = document.getElementById('subject');
+        const schedulingFields = document.getElementById('scheduling-fields');
+        
+        if (!subjectSelect) {
+            console.error('Elemento #subject não encontrado!');
+            return;
+        }
+        
+        if (!schedulingFields) {
+            console.error('Elemento #scheduling-fields não encontrado!');
+            return;
+        }
+        
+        console.log('Elementos encontrados:', subjectSelect, schedulingFields);
+        
+        // Forçar o campo a ficar oculto inicialmente
+        schedulingFields.style.display = 'none';
+        schedulingFields.style.opacity = '1';
+        schedulingFields.style.transform = 'none';
+        
+        // Função para mostrar/ocultar campos
+        function toggleFields() {
+            console.log('Select alterado para:', subjectSelect.value);
+            
+            if (subjectSelect.value === 'agendamento') {
+                console.log('Mostrando campos de agendamento');
+                schedulingFields.style.display = 'block';
+                schedulingFields.style.opacity = '1';
+                
+                // Tornar os campos obrigatórios
+                const appointmentDate = document.getElementById('appointment-date');
+                const appointmentTime = document.getElementById('appointment-time');
+                
+                if (appointmentDate) {
+                    appointmentDate.required = true;
+                    console.log('Data tornada obrigatória');
+                }
+                if (appointmentTime) {
+                    appointmentTime.required = true;
+                    console.log('Horário tornado obrigatório');
+                }
+            } else {
+                console.log('Ocultando campos de agendamento');
+                schedulingFields.style.display = 'none';
+                
+                // Remover obrigatoriedade
+                const appointmentDate = document.getElementById('appointment-date');
+                const appointmentTime = document.getElementById('appointment-time');
+                
+                if (appointmentDate) {
+                    appointmentDate.required = false;
+                    appointmentDate.value = '';
+                }
+                if (appointmentTime) {
+                    appointmentTime.required = false;
+                    appointmentTime.value = '';
+                }
+            }
+        }
+        
+        // Adicionar listener
+        subjectSelect.addEventListener('change', toggleFields);
+        
+        // Configurar inicialmente
+        console.log('Configurando estado inicial');
+        toggleFields();
+    });
+    </script>
+</body>
+</html>

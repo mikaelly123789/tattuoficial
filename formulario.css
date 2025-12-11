@@ -1,0 +1,44 @@
+.form-section {
+    margin-top: 40px;
+}
+
+.orcamento-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #2c1810; /* mesma paleta do site */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.orcamento-form label {
+    font-weight: bold;
+    color: #f0e6d8;
+}
+
+.orcamento-form input,
+.orcamento-form textarea,
+.orcamento-form select {
+    width: 100%;
+    padding: 12px;
+    background: #f8f4ef;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.orcamento-form button {
+    padding: 15px;
+    border: none;
+    background: #c62828; 
+    color: white;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.orcamento-form button:hover {
+    background: #9b1f1f;
+}
